@@ -13,6 +13,20 @@ import (
 )
 
 func main() {
+	// Create a new engine instance with default middleware (Logger and Recovery)
+	r := newgin.Default()
+	r.GET("/ping", func(c *ctx.Context) {
+		c.Success("测试的")
+	})
+
+	// Or create a blank engine
+	// r := newgin.New()
+
+	// ... define routes ...
+
+	r.Run(":8080")
+}
+func main2() {
 
 	r := newgin.New()
 
